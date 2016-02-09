@@ -27,71 +27,77 @@ public class Ventana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu1 = new javax.swing.JMenu();
         barraDeHerramientas = new javax.swing.JToolBar();
-        jButton1 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-
-        jMenu1.setText("jMenu1");
+        agregarProcesoBtn = new javax.swing.JButton();
+        panelPestañas = new javax.swing.JTabbedPane();
+        panelFIFO = new javax.swing.JScrollPane();
+        panelRoundRobin = new javax.swing.JScrollPane();
+        panelSJF = new javax.swing.JScrollPane();
+        panelSTRF = new javax.swing.JScrollPane();
+        panelExpulsivo = new javax.swing.JScrollPane();
+        panelNoExpulsivo = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Simulador de procesos");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         barraDeHerramientas.setRollover(true);
 
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        agregarProcesoBtn.setText("Agregar procesos");
+        agregarProcesoBtn.setFocusable(false);
+        agregarProcesoBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        agregarProcesoBtn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        agregarProcesoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                agregarProcesoBtnActionPerformed(evt);
             }
         });
-        barraDeHerramientas.add(jButton1);
+        barraDeHerramientas.add(agregarProcesoBtn);
 
-        jMenu2.setText("Archivo");
-
-        jMenu4.setText("Cerrar");
-        jMenu2.add(jMenu4);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Edit");
-        jMenuBar1.add(jMenu3);
-
-        setJMenuBar(jMenuBar1);
+        panelPestañas.addTab("FIFO", panelFIFO);
+        panelPestañas.addTab("Round Robin", panelRoundRobin);
+        panelPestañas.addTab("SJF", panelSJF);
+        panelPestañas.addTab("STRF", panelSTRF);
+        panelPestañas.addTab("Expulsivo", panelExpulsivo);
+        panelPestañas.addTab("No Expulsivo", panelNoExpulsivo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(barraDeHerramientas, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelPestañas)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(barraDeHerramientas, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(379, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelPestañas, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void agregarProcesoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProcesoBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_agregarProcesoBtnActionPerformed
 
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agregarProcesoBtn;
     private javax.swing.JToolBar barraDeHerramientas;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane panelExpulsivo;
+    private javax.swing.JScrollPane panelFIFO;
+    private javax.swing.JScrollPane panelNoExpulsivo;
+    private javax.swing.JTabbedPane panelPestañas;
+    private javax.swing.JScrollPane panelRoundRobin;
+    private javax.swing.JScrollPane panelSJF;
+    private javax.swing.JScrollPane panelSTRF;
     // End of variables declaration//GEN-END:variables
 }
