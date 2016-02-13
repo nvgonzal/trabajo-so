@@ -31,11 +31,22 @@ public class Ventana extends javax.swing.JFrame {
         agregarProcesoBtn = new javax.swing.JButton();
         panelPestañas = new javax.swing.JTabbedPane();
         panelFIFO = new javax.swing.JScrollPane();
+        panelIFIFO = new javax.swing.JPanel();
         panelRoundRobin = new javax.swing.JScrollPane();
+        panelIRoundRobin = new javax.swing.JPanel();
         panelSJF = new javax.swing.JScrollPane();
+        panelISJF = new javax.swing.JPanel();
         panelSTRF = new javax.swing.JScrollPane();
+        panelISTRF = new javax.swing.JPanel();
         panelExpulsivo = new javax.swing.JScrollPane();
+        panelIExpulsivo = new javax.swing.JPanel();
         panelNoExpulsivo = new javax.swing.JScrollPane();
+        panelINoExpulsivo = new javax.swing.JPanel();
+        barraMenu = new javax.swing.JMenuBar();
+        menuArchivo = new javax.swing.JMenu();
+        botonCerrar = new javax.swing.JMenuItem();
+        menuAyuda = new javax.swing.JMenu();
+        botonAcercaDe = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulador de procesos");
@@ -54,18 +65,122 @@ public class Ventana extends javax.swing.JFrame {
         });
         barraDeHerramientas.add(agregarProcesoBtn);
 
+        javax.swing.GroupLayout panelIFIFOLayout = new javax.swing.GroupLayout(panelIFIFO);
+        panelIFIFO.setLayout(panelIFIFOLayout);
+        panelIFIFOLayout.setHorizontalGroup(
+            panelIFIFOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 544, Short.MAX_VALUE)
+        );
+        panelIFIFOLayout.setVerticalGroup(
+            panelIFIFOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 332, Short.MAX_VALUE)
+        );
+
+        panelFIFO.setViewportView(panelIFIFO);
+
         panelPestañas.addTab("FIFO", panelFIFO);
+
+        javax.swing.GroupLayout panelIRoundRobinLayout = new javax.swing.GroupLayout(panelIRoundRobin);
+        panelIRoundRobin.setLayout(panelIRoundRobinLayout);
+        panelIRoundRobinLayout.setHorizontalGroup(
+            panelIRoundRobinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 544, Short.MAX_VALUE)
+        );
+        panelIRoundRobinLayout.setVerticalGroup(
+            panelIRoundRobinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 332, Short.MAX_VALUE)
+        );
+
+        panelRoundRobin.setViewportView(panelIRoundRobin);
+
         panelPestañas.addTab("Round Robin", panelRoundRobin);
+
+        javax.swing.GroupLayout panelISJFLayout = new javax.swing.GroupLayout(panelISJF);
+        panelISJF.setLayout(panelISJFLayout);
+        panelISJFLayout.setHorizontalGroup(
+            panelISJFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 544, Short.MAX_VALUE)
+        );
+        panelISJFLayout.setVerticalGroup(
+            panelISJFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 332, Short.MAX_VALUE)
+        );
+
+        panelSJF.setViewportView(panelISJF);
+
         panelPestañas.addTab("SJF", panelSJF);
+
+        javax.swing.GroupLayout panelISTRFLayout = new javax.swing.GroupLayout(panelISTRF);
+        panelISTRF.setLayout(panelISTRFLayout);
+        panelISTRFLayout.setHorizontalGroup(
+            panelISTRFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 544, Short.MAX_VALUE)
+        );
+        panelISTRFLayout.setVerticalGroup(
+            panelISTRFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 332, Short.MAX_VALUE)
+        );
+
+        panelSTRF.setViewportView(panelISTRF);
+
         panelPestañas.addTab("STRF", panelSTRF);
+
+        javax.swing.GroupLayout panelIExpulsivoLayout = new javax.swing.GroupLayout(panelIExpulsivo);
+        panelIExpulsivo.setLayout(panelIExpulsivoLayout);
+        panelIExpulsivoLayout.setHorizontalGroup(
+            panelIExpulsivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 544, Short.MAX_VALUE)
+        );
+        panelIExpulsivoLayout.setVerticalGroup(
+            panelIExpulsivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 332, Short.MAX_VALUE)
+        );
+
+        panelExpulsivo.setViewportView(panelIExpulsivo);
+
         panelPestañas.addTab("Expulsivo", panelExpulsivo);
+
+        javax.swing.GroupLayout panelINoExpulsivoLayout = new javax.swing.GroupLayout(panelINoExpulsivo);
+        panelINoExpulsivo.setLayout(panelINoExpulsivoLayout);
+        panelINoExpulsivoLayout.setHorizontalGroup(
+            panelINoExpulsivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 544, Short.MAX_VALUE)
+        );
+        panelINoExpulsivoLayout.setVerticalGroup(
+            panelINoExpulsivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 332, Short.MAX_VALUE)
+        );
+
+        panelNoExpulsivo.setViewportView(panelINoExpulsivo);
+
         panelPestañas.addTab("No Expulsivo", panelNoExpulsivo);
+
+        menuArchivo.setText("Archivo");
+
+        botonCerrar.setText("Cerrar");
+        menuArchivo.add(botonCerrar);
+
+        barraMenu.add(menuArchivo);
+
+        menuAyuda.setText("Ayuda");
+        menuAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuAyudaActionPerformed(evt);
+            }
+        });
+
+        botonAcercaDe.setText("Acerca de...");
+        menuAyuda.add(botonAcercaDe);
+
+        barraMenu.add(menuAyuda);
+
+        setJMenuBar(barraMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(barraDeHerramientas, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
+            .addComponent(barraDeHerramientas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelPestañas)
@@ -76,7 +191,7 @@ public class Ventana extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(barraDeHerramientas, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelPestañas, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                .addComponent(panelPestañas)
                 .addContainerGap())
         );
 
@@ -87,17 +202,33 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_agregarProcesoBtnActionPerformed
 
+    private void menuAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAyudaActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_menuAyudaActionPerformed
+
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton agregarProcesoBtn;
-    private javax.swing.JToolBar barraDeHerramientas;
-    private javax.swing.JScrollPane panelExpulsivo;
-    private javax.swing.JScrollPane panelFIFO;
-    private javax.swing.JScrollPane panelNoExpulsivo;
-    private javax.swing.JTabbedPane panelPestañas;
-    private javax.swing.JScrollPane panelRoundRobin;
-    private javax.swing.JScrollPane panelSJF;
-    private javax.swing.JScrollPane panelSTRF;
+    protected javax.swing.JButton agregarProcesoBtn;
+    protected javax.swing.JToolBar barraDeHerramientas;
+    protected javax.swing.JMenuBar barraMenu;
+    protected javax.swing.JMenuItem botonAcercaDe;
+    protected javax.swing.JMenuItem botonCerrar;
+    protected javax.swing.JMenu menuArchivo;
+    protected javax.swing.JMenu menuAyuda;
+    protected javax.swing.JScrollPane panelExpulsivo;
+    protected javax.swing.JScrollPane panelFIFO;
+    protected javax.swing.JPanel panelIExpulsivo;
+    protected javax.swing.JPanel panelIFIFO;
+    protected javax.swing.JPanel panelINoExpulsivo;
+    protected javax.swing.JPanel panelIRoundRobin;
+    protected javax.swing.JPanel panelISJF;
+    protected javax.swing.JPanel panelISTRF;
+    protected javax.swing.JScrollPane panelNoExpulsivo;
+    protected javax.swing.JTabbedPane panelPestañas;
+    protected javax.swing.JScrollPane panelRoundRobin;
+    protected javax.swing.JScrollPane panelSJF;
+    protected javax.swing.JScrollPane panelSTRF;
     // End of variables declaration//GEN-END:variables
 }
